@@ -582,7 +582,7 @@ body::-webkit-scrollbar-thumb:hover { background: hsl(0, 0%, 70%); }
 }
 
 /*-----------------------------------*\
-  #PRODUCT GRID
+  #PRODUCT GRID - FIXED IMAGE SIZES
 \*-----------------------------------*/
 
 .product-main { margin-bottom: 30px; }
@@ -598,11 +598,18 @@ body::-webkit-scrollbar-thumb:hover { background: hsl(0, 0%, 70%); }
   transition: var(--transition-timing);
 }
 .product-grid .showcase:hover { box-shadow: 0 0 10px hsla(0, 0%, 0%, 0.1); }
-.product-grid .showcase-banner { position: relative; }
+.product-grid .showcase-banner { 
+  position: relative;
+  height: 250px; /* Fixed height for all product images */
+  overflow: hidden;
+}
 .product-grid .product-img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain; /* Changed from cover to contain to show full product */
+  object-position: center;
+  padding: 15px;
+  background-color: var(--white);
   transition: var(--transition-timing);
 }
 .product-grid .product-img.default {
@@ -618,7 +625,7 @@ body::-webkit-scrollbar-thumb:hover { background: hsl(0, 0%, 70%); }
 }
 .product-grid .showcase:hover .product-img.hover { opacity: 1; }
 .product-grid .showcase:hover .product-img.default { opacity: 0; }
-.product-grid .showcase:hover .product-img { transform: scale(1.1); }
+.product-grid .showcase:hover .product-img { transform: scale(1.05); }
 .product-grid .showcase-badge {
   position: absolute;
   top: 15px;
@@ -665,13 +672,18 @@ body::-webkit-scrollbar-thumb:hover { background: hsl(0, 0%, 70%); }
   color: var(--white);
   border-color: var(--eerie-black);
 }
-.product-grid .showcase-content { padding: 15px 20px 0; }
+.product-grid .showcase-content { 
+  padding: 15px 20px;
+  min-height: 140px; /* Fixed minimum height for content area */
+  display: flex;
+  flex-direction: column;
+}
 .product-grid .showcase-category {
   color: var(--primary-color);
   font-size: var(--fs-9);
   font-weight: var(--weight-500);
   text-transform: uppercase;
-  margin-bottom: 10px;
+  margin-bottom: 8px;
 }
 .product-grid .showcase-title {
   color: var(--sonic-silver);
@@ -679,14 +691,17 @@ body::-webkit-scrollbar-thumb:hover { background: hsl(0, 0%, 70%); }
   font-weight: var(--weight-300);
   text-transform: capitalize;
   letter-spacing: 1px;
-  margin-bottom: 10px;
+  margin-bottom: 8px;
   transition: var(--transition-timing);
+  line-height: 1.4;
+  flex-grow: 1;
 }
 .product-grid .showcase-title:hover { color: var(--eerie-black); }
 .product-grid .showcase-rating {
   display: flex;
   color: var(--sandy-brown);
   margin-bottom: 10px;
+  font-size: 14px;
 }
 .product-grid .price-box {
   display: flex;
@@ -694,12 +709,17 @@ body::-webkit-scrollbar-thumb:hover { background: hsl(0, 0%, 70%); }
   font-size: var(--fs-7);
   color: var(--eerie-black);
   margin-bottom: 10px;
+  align-items: center;
 }
 .product-grid .price { 
   font-weight: var(--weight-700);
   color: var(--primary-color);
+  font-size: var(--fs-6);
 }
-.product-grid del { color: var(--sonic-silver); }
+.product-grid del { 
+  color: var(--sonic-silver);
+  font-size: var(--fs-8);
+}
 
 /*-----------------------------------*\
   #RESPONSIVE
@@ -716,6 +736,9 @@ body::-webkit-scrollbar-thumb:hover { background: hsl(0, 0%, 70%); }
   .product-grid {
     grid-template-columns: 1fr 1fr;
     gap: 30px;
+  }
+  .product-grid .showcase-banner {
+    height: 280px; /* Slightly larger on tablets */
   }
 }
 
@@ -747,6 +770,9 @@ body::-webkit-scrollbar-thumb:hover { background: hsl(0, 0%, 70%); }
   .newsletter { text-align: left; }
   .header-main .container { gap: 80px; }
   .header-search-container { flex-grow: 1; }
+  .product-grid .showcase-banner {
+    height: 300px; /* Larger on desktop */
+  }
 }
 
 @media (min-width: 1024px) {
@@ -919,16 +945,30 @@ body::-webkit-scrollbar-thumb:hover { background: hsl(0, 0%, 70%); }
   }
   .sidebar-close-btn { display: none; }
   .product-box { min-width: calc(75% - 15px); }
-  .product-grid { grid-template-columns: repeat(3, 1fr); }
+  .product-grid { 
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .product-grid .showcase-banner {
+    height: 260px; /* Adjusted for 3-column layout */
+  }
 }
 
 @media (min-width: 1200px) {
   .container { max-width: 1200px; }
   .desktop-menu-category-list { gap: 45px; }
-  .product-grid { grid-template-columns: repeat(4, 1fr); }
+  .product-grid { 
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+  }
+  .product-grid .showcase-banner {
+    height: 240px; /* Adjusted for 4-column layout */
+  }
 }
 
 @media (min-width: 1400px) {
   html { font-size: 18px; }
   .container { max-width: 1350px; }
+  .product-grid .showcase-banner {
+    height: 260px; /* Slightly larger on extra large screens */
+  }
 }
