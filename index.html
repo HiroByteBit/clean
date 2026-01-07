@@ -23,99 +23,6 @@
   <!--
     - custom theme colors
   -->
-  <style>
-    :root {
-      --primary-color: #5fa856;
-      --secondary-color: #1b191a;
-    }
-
-    /* Apply theme colors */
-    .banner-btn,
-    .btn-newsletter,
-    .add-cart-btn,
-    .btn-action:hover,
-    .showcase-badge,
-    .category-btn,
-    .search-btn,
-    .action-btn:hover,
-    .header-alert-news,
-    .showcase-badge.angle.black,
-    .showcase-badge.angle.pink {
-      background-color: var(--primary-color);
-      border-color: var(--primary-color);
-    }
-
-    .title,
-    .menu-title,
-    .category-item-title,
-    .showcase-title,
-    .price,
-    .testimonial-name,
-    .testimonial-title,
-    .service-title,
-    .blog-title,
-    .cta-title,
-    .footer-category-title,
-    .nav-title,
-    .footer-nav-link,
-    .copyright,
-    .header-alert-news p {
-      color: var(--secondary-color);
-    }
-
-    .showcase-badge.angle.black,
-    .showcase-badge.angle.pink {
-      color: white;
-    }
-
-    .price {
-      color: var(--primary-color);
-      font-weight: 600;
-    }
-
-    /* Make header white */
-    .header-main,
-    .desktop-navigation-menu {
-      background-color: white;
-    }
-
-    /* Make header-top white and remove social links */
-    .header-top {
-      background-color: white;
-      border-bottom: 1px solid #e0e0e0;
-      padding: 5px 0;
-    }
-
-    .header-social-container {
-      display: none;
-    }
-
-    .menu-title:hover,
-    .footer-nav-link:hover,
-    .social-link:hover {
-      color: var(--primary-color) !important;
-    }
-
-    /* Remove border from header */
-    .header-main .container {
-      border-bottom: none;
-    }
-
-    /* Make search field more visible on white background */
-    .search-field {
-      border: 1px solid #e0e0e0;
-      background-color: #f5f5f5;
-    }
-
-    /* Make cart button stand out */
-    .action-btn {
-      color: var(--secondary-color);
-    }
-
-    .action-btn:hover {
-      color: white;
-    }
-  </style>
 
 </head>
 
@@ -257,10 +164,15 @@
         -->
 
         <div class="sidebar  has-scrollbar" data-mobile-menu>
+
           <div class="product-showcase">
             <h3 class="showcase-heading">Best Sellers</h3>
+
             <div class="showcase-wrapper">
+
               <div class="showcase-container">
+
+
                 <div class="showcase">
                   <a href="#" class="showcase-img-box">
                     <img src="./assets/images/IPHONE/nav_iphone_16.png" alt="iPhone 16" width="75" height="75"
@@ -285,8 +197,8 @@
                   </div>
                 </div>
 
-                <div class="showcase">
 
+                <div class="showcase">
                   <a href="#" class="showcase-img-box">
                     <img src="./assets/images/IPAD/ipad.jpg" alt="iPad Air" class="showcase-img" width="75" height="75">
                   </a>
@@ -381,59 +293,37 @@
 
 
 
-        <div class="product-box">
-
-          <!--
-            - PRODUCT GRID
-          -->
-
+        <di<div class="product-box">
           <div class="product-main">
-
             <h2 class="title">Featured Products</h2>
 
             <div class="product-grid">
 
               <div class="showcase">
-
                 <div class="showcase-banner">
-
                   <img src="./assets/images/IPHONE/nav_iphone_17pro.png" alt="iPhone 17 Pro" width="300"
-                    class="product-img default">
-                  <img src="./assets/images/IPHONE/nav_iphone_17.png" alt="iPhone 17" width="300"
-                    class="product-img hover">
-
+                    class="product-img">
                   <p class="showcase-badge">New</p>
-
                   <div class="showcase-actions">
-
                     <button class="btn-action">
                       <ion-icon name="heart-outline"></ion-icon>
                     </button>
-
                     <button class="btn-action">
                       <ion-icon name="eye-outline"></ion-icon>
                     </button>
-
                     <button class="btn-action">
                       <ion-icon name="repeat-outline"></ion-icon>
                     </button>
-
                     <button class="btn-action">
                       <ion-icon name="bag-add-outline"></ion-icon>
                     </button>
-
                   </div>
-
                 </div>
-
                 <div class="showcase-content">
-
                   <a href="#" class="showcase-category">iPhone</a>
-
                   <a href="#">
                     <h3 class="showcase-title">iPhone 17 Pro</h3>
                   </a>
-
                   <div class="showcase-rating">
                     <ion-icon name="star"></ion-icon>
                     <ion-icon name="star"></ion-icon>
@@ -441,52 +331,38 @@
                     <ion-icon name="star-outline"></ion-icon>
                     <ion-icon name="star-outline"></ion-icon>
                   </div>
-
                   <div class="price-box">
                     <p class="price">₱79,990</p>
                     <del>₱85,990</del>
                   </div>
-
                 </div>
-
               </div>
 
               <div class="showcase">
-
                 <div class="showcase-banner">
-                  <img src="./assets/images/MAC/Air/mbp14-silver.jpg" alt="MacBook Pro 14-inch"
-                    class="product-img default" width="300">
-                  <img src="./assets/images/MAC/Air/mbp14-spaceblack.jpg" alt="MacBook Pro 14-inch Space Black"
-                    class="product-img hover" width="300">
-
+                  <img src="./assets/images/MAC/Air/mbp14-silver.jpg" alt="MacBook Pro 14-inch" class="product-img"
+                    width="300">
                   <p class="showcase-badge angle black">Sale</p>
-
                   <div class="showcase-actions">
                     <button class="btn-action">
                       <ion-icon name="heart-outline"></ion-icon>
                     </button>
-
                     <button class="btn-action">
                       <ion-icon name="eye-outline"></ion-icon>
                     </button>
-
                     <button class="btn-action">
                       <ion-icon name="repeat-outline"></ion-icon>
                     </button>
-
                     <button class="btn-action">
                       <ion-icon name="bag-add-outline"></ion-icon>
                     </button>
                   </div>
                 </div>
-
                 <div class="showcase-content">
                   <a href="#" class="showcase-category">Mac</a>
-
                   <h3>
                     <a href="#" class="showcase-title">MacBook Pro 14-inch</a>
                   </h3>
-
                   <div class="showcase-rating">
                     <ion-icon name="star"></ion-icon>
                     <ion-icon name="star"></ion-icon>
@@ -494,49 +370,36 @@
                     <ion-icon name="star-outline"></ion-icon>
                     <ion-icon name="star-outline"></ion-icon>
                   </div>
-
                   <div class="price-box">
                     <p class="price">₱89,990</p>
                     <del>₱95,990</del>
                   </div>
-
                 </div>
-
               </div>
 
               <div class="showcase">
-
                 <div class="showcase-banner">
-                  <img src="./assets/images/IPAD/ipad_pro.jpg" alt="iPad Pro 12.9-inch" class="product-img default"
-                    width="300">
-                  <img src="./assets/images/IPAD/ipad.jpg" alt="iPad Air" class="product-img hover" width="300">
-
+                  <img src="./assets/images/IPAD/ipad_pro.jpg" alt="iPad Pro 12.9-inch" class="product-img" width="300">
                   <div class="showcase-actions">
                     <button class="btn-action">
                       <ion-icon name="heart-outline"></ion-icon>
                     </button>
-
                     <button class="btn-action">
                       <ion-icon name="eye-outline"></ion-icon>
                     </button>
-
                     <button class="btn-action">
                       <ion-icon name="repeat-outline"></ion-icon>
                     </button>
-
                     <button class="btn-action">
                       <ion-icon name="bag-add-outline"></ion-icon>
                     </button>
                   </div>
                 </div>
-
                 <div class="showcase-content">
                   <a href="#" class="showcase-category">iPad</a>
-
                   <h3>
                     <a href="#" class="showcase-title">iPad Pro 12.9-inch</a>
                   </h3>
-
                   <div class="showcase-rating">
                     <ion-icon name="star"></ion-icon>
                     <ion-icon name="star"></ion-icon>
@@ -544,52 +407,38 @@
                     <ion-icon name="star-outline"></ion-icon>
                     <ion-icon name="star-outline"></ion-icon>
                   </div>
-
                   <div class="price-box">
                     <p class="price">₱65,990</p>
                     <del>₱69,990</del>
                   </div>
-
                 </div>
-
               </div>
 
               <div class="showcase">
-
                 <div class="showcase-banner">
-                  <img src="./assets/images/MAC/Pro/mba13-silver.jpg" alt="MacBook Air Silver"
-                    class="product-img default" width="300">
-                  <img src="./assets/images/MAC/Pro/mba13-midnight.jpg" alt="MacBook Air Midnight"
-                    class="product-img hover" width="300">
-
+                  <img src="./assets/images/MAC/Pro/mba13-silver.jpg" alt="MacBook Air Silver" class="product-img"
+                    width="300">
                   <p class="showcase-badge">New</p>
-
                   <div class="showcase-actions">
                     <button class="btn-action">
                       <ion-icon name="heart-outline"></ion-icon>
                     </button>
-
                     <button class="btn-action">
                       <ion-icon name="eye-outline"></ion-icon>
                     </button>
-
                     <button class="btn-action">
                       <ion-icon name="repeat-outline"></ion-icon>
                     </button>
-
                     <button class="btn-action">
                       <ion-icon name="bag-add-outline"></ion-icon>
                     </button>
                   </div>
                 </div>
-
                 <div class="showcase-content">
                   <a href="#" class="showcase-category">Mac</a>
-
                   <h3>
                     <a href="#" class="showcase-title">MacBook Air M3</a>
                   </h3>
-
                   <div class="showcase-rating">
                     <ion-icon name="star"></ion-icon>
                     <ion-icon name="star"></ion-icon>
@@ -597,50 +446,36 @@
                     <ion-icon name="star"></ion-icon>
                     <ion-icon name="star"></ion-icon>
                   </div>
-
                   <div class="price-box">
                     <p class="price">₱62,990</p>
                     <del>₱67,990</del>
                   </div>
-
                 </div>
-
               </div>
 
               <div class="showcase">
-
                 <div class="showcase-banner">
-                  <img src="./assets/images/IPHONE/nav_iphone_air.png" alt="iPhone Air" class="product-img default"
-                    width="300">
-                  <img src="./assets/images/IPHONE/nav_iphone_16.png" alt="iPhone 16" class="product-img hover"
-                    width="300">
-
+                  <img src="./assets/images/IPHONE/nav_iphone_air.png" alt="iPhone Air" class="product-img" width="300">
                   <div class="showcase-actions">
                     <button class="btn-action">
                       <ion-icon name="heart-outline"></ion-icon>
                     </button>
-
                     <button class="btn-action">
                       <ion-icon name="eye-outline"></ion-icon>
                     </button>
-
                     <button class="btn-action">
                       <ion-icon name="repeat-outline"></ion-icon>
                     </button>
-
                     <button class="btn-action">
                       <ion-icon name="bag-add-outline"></ion-icon>
                     </button>
                   </div>
                 </div>
-
                 <div class="showcase-content">
                   <a href="#" class="showcase-category">iPhone</a>
-
                   <h3>
                     <a href="#" class="showcase-title">iPhone Air</a>
                   </h3>
-
                   <div class="showcase-rating">
                     <ion-icon name="star"></ion-icon>
                     <ion-icon name="star"></ion-icon>
@@ -648,52 +483,38 @@
                     <ion-icon name="star"></ion-icon>
                     <ion-icon name="star"></ion-icon>
                   </div>
-
                   <div class="price-box">
                     <p class="price">₱52,990</p>
                     <del>₱56,990</del>
                   </div>
-
                 </div>
-
               </div>
 
               <div class="showcase">
-
                 <div class="showcase-banner">
-                  <img src="./assets/images/MAC/Pro/mac-card-macbook-air.jpg" alt="MacBook Air"
-                    class="product-img default" width="300">
-                  <img src="./assets/images/MAC/Pro/mba13-starlight.jpg" alt="MacBook Air Starlight"
-                    class="product-img hover" width="300">
-
+                  <img src="./assets/images/MAC/Pro/mac-card-macbook-air.jpg" alt="MacBook Air" class="product-img"
+                    width="300">
                   <p class="showcase-badge angle black">Sale</p>
-
                   <div class="showcase-actions">
                     <button class="btn-action">
                       <ion-icon name="heart-outline"></ion-icon>
                     </button>
-
                     <button class="btn-action">
                       <ion-icon name="eye-outline"></ion-icon>
                     </button>
-
                     <button class="btn-action">
                       <ion-icon name="repeat-outline"></ion-icon>
                     </button>
-
                     <button class="btn-action">
                       <ion-icon name="bag-add-outline"></ion-icon>
                     </button>
                   </div>
                 </div>
-
                 <div class="showcase-content">
                   <a href="#" class="showcase-category">Mac</a>
-
                   <h3>
                     <a href="#" class="showcase-title">MacBook Air M2</a>
                   </h3>
-
                   <div class="showcase-rating">
                     <ion-icon name="star"></ion-icon>
                     <ion-icon name="star"></ion-icon>
@@ -701,50 +522,36 @@
                     <ion-icon name="star-outline"></ion-icon>
                     <ion-icon name="star-outline"></ion-icon>
                   </div>
-
                   <div class="price-box">
                     <p class="price">₱56,990</p>
                     <del>₱61,990</del>
                   </div>
-
                 </div>
-
               </div>
 
               <div class="showcase">
-
                 <div class="showcase-banner">
-                  <img src="./assets/images/IPHONE/nav_iphone_17.png" alt="iPhone 17" class="product-img default"
-                    width="300">
-                  <img src="./assets/images/IPHONE/nav_iphone_air.png" alt="iPhone Air" class="product-img hover"
-                    width="300">
-
+                  <img src="./assets/images/IPHONE/nav_iphone_17.png" alt="iPhone 17" class="product-img" width="300">
                   <div class="showcase-actions">
                     <button class="btn-action">
                       <ion-icon name="heart-outline"></ion-icon>
                     </button>
-
                     <button class="btn-action">
                       <ion-icon name="eye-outline"></ion-icon>
                     </button>
-
                     <button class="btn-action">
                       <ion-icon name="repeat-outline"></ion-icon>
                     </button>
-
                     <button class="btn-action">
                       <ion-icon name="bag-add-outline"></ion-icon>
                     </button>
                   </div>
                 </div>
-
                 <div class="showcase-content">
                   <a href="#" class="showcase-category">iPhone</a>
-
                   <h3>
                     <a href="#" class="showcase-title">iPhone 17</a>
                   </h3>
-
                   <div class="showcase-rating">
                     <ion-icon name="star"></ion-icon>
                     <ion-icon name="star"></ion-icon>
@@ -752,7 +559,6 @@
                     <ion-icon name="star"></ion-icon>
                     <ion-icon name="star-outline"></ion-icon>
                   </div>
-
                   <div class="price-box">
                     <p class="price">₱69,990</p>
                     <del>₱74,990</del>
@@ -761,41 +567,30 @@
               </div>
 
               <div class="showcase">
-
                 <div class="showcase-banner">
                   <img src="./assets/images/MAC/Air/mac-card-macbookpro-14-16.jpg" alt="MacBook Pro 16-inch"
-                    class="product-img default" width="300">
-                  <img src="./assets/images/MAC/Air/mbp14-spaceblack.jpg" alt="MacBook Pro Space Black"
-                    class="product-img hover" width="300">
-
+                    class="product-img" width="300">
                   <p class="showcase-badge angle black">Sale</p>
-
                   <div class="showcase-actions">
                     <button class="btn-action">
                       <ion-icon name="heart-outline"></ion-icon>
                     </button>
-
                     <button class="btn-action">
                       <ion-icon name="eye-outline"></ion-icon>
                     </button>
-
                     <button class="btn-action">
                       <ion-icon name="repeat-outline"></ion-icon>
                     </button>
-
                     <button class="btn-action">
                       <ion-icon name="bag-add-outline"></ion-icon>
                     </button>
                   </div>
                 </div>
-
                 <div class="showcase-content">
                   <a href="#" class="showcase-category">Mac</a>
-
                   <h3>
                     <a href="#" class="showcase-title">MacBook Pro 16-inch</a>
                   </h3>
-
                   <div class="showcase-rating">
                     <ion-icon name="star"></ion-icon>
                     <ion-icon name="star"></ion-icon>
@@ -803,48 +598,36 @@
                     <ion-icon name="star-outline"></ion-icon>
                     <ion-icon name="star-outline"></ion-icon>
                   </div>
-
                   <div class="price-box">
                     <p class="price">₱105,990</p>
                     <del>₱112,990</del>
                   </div>
-
                 </div>
-
               </div>
 
               <div class="showcase">
-
                 <div class="showcase-banner">
-                  <img src="./assets/images/IPAD/ipad.jpg" alt="iPad" class="product-img default" width="300">
-                  <img src="./assets/images/IPAD/ipad_pro.jpg" alt="iPad Pro" class="product-img hover" width="300">
-
+                  <img src="./assets/images/IPAD/ipad.jpg" alt="iPad" class="product-img" width="300">
                   <div class="showcase-actions">
                     <button class="btn-action">
                       <ion-icon name="heart-outline"></ion-icon>
                     </button>
-
                     <button class="btn-action">
                       <ion-icon name="eye-outline"></ion-icon>
                     </button>
-
                     <button class="btn-action">
                       <ion-icon name="repeat-outline"></ion-icon>
                     </button>
-
                     <button class="btn-action">
                       <ion-icon name="bag-add-outline"></ion-icon>
                     </button>
                   </div>
                 </div>
-
                 <div class="showcase-content">
                   <a href="#" class="showcase-category">iPad</a>
-
                   <h3>
                     <a href="#" class="showcase-title">iPad 10th Gen</a>
                   </h3>
-
                   <div class="showcase-rating">
                     <ion-icon name="star"></ion-icon>
                     <ion-icon name="star"></ion-icon>
@@ -852,52 +635,37 @@
                     <ion-icon name="star"></ion-icon>
                     <ion-icon name="star-outline"></ion-icon>
                   </div>
-
                   <div class="price-box">
                     <p class="price">₱32,990</p>
                     <del>₱36,990</del>
                   </div>
-
                 </div>
-
               </div>
 
               <div class="showcase">
-
                 <div class="showcase-banner">
-                  <img src="./assets/images/IPHONE/nav_iphone_16.png" alt="iPhone 16" class="product-img default"
-                    width="300">
-                  <img src="./assets/images/IPHONE/nav_iphone_17.png" alt="iPhone 17" class="product-img hover"
-                    width="300">
-
+                  <img src="./assets/images/IPHONE/nav_iphone_16.png" alt="iPhone 16" class="product-img" width="300">
                   <p class="showcase-badge angle black">Sale</p>
-
                   <div class="showcase-actions">
                     <button class="btn-action">
                       <ion-icon name="heart-outline"></ion-icon>
                     </button>
-
                     <button class="btn-action">
                       <ion-icon name="eye-outline"></ion-icon>
                     </button>
-
                     <button class="btn-action">
                       <ion-icon name="repeat-outline"></ion-icon>
                     </button>
-
                     <button class="btn-action">
                       <ion-icon name="bag-add-outline"></ion-icon>
                     </button>
                   </div>
                 </div>
-
                 <div class="showcase-content">
                   <a href="#" class="showcase-category">iPhone</a>
-
                   <h3>
                     <a href="#" class="showcase-title">iPhone 16 Plus</a>
                   </h3>
-
                   <div class="showcase-rating">
                     <ion-icon name="star"></ion-icon>
                     <ion-icon name="star"></ion-icon>
@@ -905,50 +673,37 @@
                     <ion-icon name="star-outline"></ion-icon>
                     <ion-icon name="star-outline"></ion-icon>
                   </div>
-
                   <div class="price-box">
                     <p class="price">₱62,990</p>
                     <del>₱67,990</del>
                   </div>
-
                 </div>
-
               </div>
 
               <div class="showcase">
-
                 <div class="showcase-banner">
-                  <img src="./assets/images/MAC/Pro/mba13-midnight.jpg" alt="MacBook Air Midnight"
-                    class="product-img default" width="300">
-                  <img src="./assets/images/MAC/Pro/mba13-starlight.jpg" alt="MacBook Air Starlight"
-                    class="product-img hover" width="300">
-
+                  <img src="./assets/images/MAC/Pro/mba13-midnight.jpg" alt="MacBook Air Midnight" class="product-img"
+                    width="300">
                   <div class="showcase-actions">
                     <button class="btn-action">
                       <ion-icon name="heart-outline"></ion-icon>
                     </button>
-
                     <button class="btn-action">
                       <ion-icon name="eye-outline"></ion-icon>
                     </button>
-
                     <button class="btn-action">
                       <ion-icon name="repeat-outline"></ion-icon>
                     </button>
-
                     <button class="btn-action">
                       <ion-icon name="bag-add-outline"></ion-icon>
                     </button>
                   </div>
                 </div>
-
                 <div class="showcase-content">
                   <a href="#" class="showcase-category">Mac</a>
-
                   <h3>
                     <a href="#" class="showcase-title">MacBook Air M1</a>
                   </h3>
-
                   <div class="showcase-rating">
                     <ion-icon name="star"></ion-icon>
                     <ion-icon name="star"></ion-icon>
@@ -956,50 +711,37 @@
                     <ion-icon name="star"></ion-icon>
                     <ion-icon name="star-outline"></ion-icon>
                   </div>
-
                   <div class="price-box">
                     <p class="price">₱49,990</p>
                     <del>₱54,990</del>
                   </div>
-
                 </div>
-
               </div>
 
               <div class="showcase">
-
                 <div class="showcase-banner">
-                  <img src="./assets/images/IPAD/ipad_pro.jpg" alt="iPad Pro" class="product-img default" width="300">
-                  <img src="./assets/images/IPAD/ipad.jpg" alt="iPad" class="product-img hover" width="300">
-
+                  <img src="./assets/images/IPAD/ipad_prom4.jpg" alt="iPad Pro" class="product-img" width="300">
                   <p class="showcase-badge angle black">Sale</p>
-
                   <div class="showcase-actions">
                     <button class="btn-action">
                       <ion-icon name="heart-outline"></ion-icon>
                     </button>
-
                     <button class="btn-action">
                       <ion-icon name="eye-outline"></ion-icon>
                     </button>
-
                     <button class="btn-action">
                       <ion-icon name="repeat-outline"></ion-icon>
                     </button>
-
                     <button class="btn-action">
                       <ion-icon name="bag-add-outline"></ion-icon>
                     </button>
                   </div>
                 </div>
-
                 <div class="showcase-content">
                   <a href="#" class="showcase-category">iPad</a>
-
                   <h3>
                     <a href="#" class="showcase-title">iPad Pro M4</a>
                   </h3>
-
                   <div class="showcase-rating">
                     <ion-icon name="star"></ion-icon>
                     <ion-icon name="star"></ion-icon>
@@ -1007,7 +749,6 @@
                     <ion-icon name="star-outline"></ion-icon>
                     <ion-icon name="star-outline"></ion-icon>
                   </div>
-
                   <div class="price-box">
                     <p class="price">₱75,990</p>
                     <del>₱82,990</del>
@@ -1015,13 +756,10 @@
                 </div>
               </div>
 
-
-
             </div>
-
           </div>
-        </div>
       </div>
+    </div>
     </div>
   </main>
 
