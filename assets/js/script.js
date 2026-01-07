@@ -1,88 +1,121 @@
-'use strict';
+// components.js - Core functionality for all pages
+document.addEventListener('DOMContentLoaded', function () {
+  // Load header and footer
+  loadComponent('header-container', 'components/header.html');
+  loadComponent('footer-container', 'components/footer.html');
 
-// modal variables
-const modal = document.querySelector('[data-modal]');
-const modalCloseBtn = document.querySelector('[data-modal-close]');
-const modalCloseOverlay = document.querySelector('[data-modal-overlay]');
-
-// modal function
-const modalCloseFunc = function () { modal.classList.add('closed') }
-
-// modal eventListener
-modalCloseOverlay.addEventListener('click', modalCloseFunc);
-modalCloseBtn.addEventListener('click', modalCloseFunc);
-
-
-
-
-
-// notification toast variables
-const notificationToast = document.querySelector('[data-toast]');
-const toastCloseBtn = document.querySelector('[data-toast-close]');
-
-// notification toast eventListener
-toastCloseBtn.addEventListener('click', function () {
-  notificationToast.classList.add('closed');
+  // Initialize core functions after components load
+  setTimeout(initCoreFunctions, 100);
 });
 
+// Component loader
+async function loadComponent(elementId, filePath) {
+  try {
+    const element = document.getElementById(elementId);
+    if (!element) return;
 
+    const response = await fetch(filePath);
+    if (!response.ok) throw new Error(`Failed to load ${filePath}`);
 
+    const html = await response.text();
+    element.innerHTML = html;
 
-
-// mobile menu variables
-const mobileMenuOpenBtn = document.querySelectorAll('[data-mobile-menu-open-btn]');
-const mobileMenu = document.querySelectorAll('[data-mobile-menu]');
-const mobileMenuCloseBtn = document.querySelectorAll('[data-mobile-menu-close-btn]');
-const overlay = document.querySelector('[data-overlay]');
-
-for (let i = 0; i < mobileMenuOpenBtn.length; i++) {
-
-  // mobile menu function
-  const mobileMenuCloseFunc = function () {
-    mobileMenu[i].classList.remove('active');
-    overlay.classList.remove('active');
+    // Execute any scripts within the component
+    const scripts = element.querySelectorAll('script');
+    scripts.forEach(script => {
+      const newScript = document.createElement('script');
+      if (script.src) {
+        newScript.src = script.src;
+      } else {
+        newScript.textContent = script.textContent;
+      }
+      document.body.appendChild(newScript);
+    });
+  } catch (error) {
+    console.error('Error loading component:', error);
   }
-
-  mobileMenuOpenBtn[i].addEventListener('click', function () {
-    mobileMenu[i].classList.add('active');
-    overlay.classList.add('active');
-  });
-
-  mobileMenuCloseBtn[i].addEventListener('click', mobileMenuCloseFunc);
-  overlay.addEventListener('click', mobileMenuCloseFunc);
-
 }
 
+// Core functions for all pages
+function initCoreFunctions() {
+  initMobileMenu();
+  updateCartCount();
+  setCurrentYear();
+  initCartButton();
+}
 
+// Mobile menu functionality
+function initMobileMenu() {
+  const mobileMenuOpenBtn = document.querySelector('[data-mobile-menu-open-btn]');
+  const mobileMenuCloseBtn = document.querySelector('[data-mobile-menu-close-btn]');
+  const mobileMenu = document.querySelector('[data-mobile-menu]');
 
+  if (mobileMenuOpenBtn && mobileMenu) {
+    mobileMenuOpenBtn.addEventListener('click', () => {
+      mobileMenu.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    });
+  }
 
+  if (mobileMenuCloseBtn && mobileMenu) {
+    mobileMenuCloseBtn.addEventListener('click', () => {
+      mobileMenu.classList.remove('active');
+      document.body.style.overflow = '';
+    });
+  }
 
-// accordion variables
-const accordionBtn = document.querySelectorAll('[data-accordion-btn]');
-const accordion = document.querySelectorAll('[data-accordion]');
-
-for (let i = 0; i < accordionBtn.length; i++) {
-
-  accordionBtn[i].addEventListener('click', function () {
-
-    const clickedBtn = this.nextElementSibling.classList.contains('active');
-
-    for (let i = 0; i < accordion.length; i++) {
-
-      if (clickedBtn) break;
-
-      if (accordion[i].classList.contains('active')) {
-
-        accordion[i].classList.remove('active');
-        accordionBtn[i].classList.remove('active');
-
-      }
-
+  // Close menu when clicking outside
+  document.addEventListener('click', (event) => {
+    if (mobileMenu && mobileMenu.classList.contains('active') &&
+      !mobileMenu.contains(event.target) &&
+      !event.target.closest('[data-mobile-menu-open-btn]')) {
+      mobileMenu.classList.remove('active');
+      document.body.style.overflow = '';
     }
-
-    this.nextElementSibling.classList.toggle('active');
-    this.classList.toggle('active');
-
   });
+}
 
+// Cart functionality (shared)
+let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+function initCartButton() {
+  const cartBtn = document.getElementById('cart-btn');
+  const mobileCartBtn = document.getElementById('mobile-cart-btn');
+
+  if (cartBtn) {
+    cartBtn.addEventListener('click', () => {
+      window.location.href = 'cart.html';
+    });
+  }
+
+  if (mobileCartBtn) {
+    mobileCartBtn.addEventListener('click', () => {
+      window.location.href = 'cart.html';
+    });
+  }
+}
+
+function addToCart(productId, quantity = 1) {
+  // This will be extended in product-details.js
+  console.log(`Adding ${quantity} of ${productId} to cart`);
+  // For now, just update count
+  updateCartCount(cart.length + 1);
+}
+
+function updateCartCount(count) {
+  if (count !== undefined) {
+    cart = Array(count).fill({}); // Temporary
+  }
+  const totalItems = cart.length;
+  document.querySelectorAll('.count').forEach(element => {
+    element.textContent = totalItems;
+  });
+  localStorage.setItem('cart', JSON.stringify(cart));
+}
+
+function setCurrentYear() {
+  const yearElement = document.getElementById('current-year');
+  if (yearElement) {
+    yearElement.textContent = new Date().getFullYear();
+  }
 }
