@@ -1673,3 +1673,444 @@ body::-webkit-scrollbar-thumb:hover {
   z-index: 10;
   /* Ensure buttons are above the link */
 }
+
+/* Add to style.css */
+.product-headline {
+  color: var(--sonic-silver);
+  font-size: var(--fs-6);
+  font-weight: var(--weight-500);
+  margin: 10px 0 15px;
+  line-height: 1.4;
+}
+
+/* Add to style.css if not already there */
+.loading {
+  text-align: center;
+  padding: 50px;
+  color: var(--sonic-silver);
+  font-size: var(--fs-5);
+}
+
+.product-not-found {
+  text-align: center;
+  padding: 50px 20px;
+}
+
+.product-not-found h2 {
+  color: var(--secondary-color);
+  margin-bottom: 15px;
+}
+
+.product-not-found p {
+  color: var(--sonic-silver);
+  margin-bottom: 25px;
+}
+
+.btn-back {
+  display: inline-block;
+  background: var(--primary-color);
+  color: white;
+  padding: 10px 25px;
+  border-radius: var(--border-radius-sm);
+  text-decoration: none;
+  font-weight: var(--weight-600);
+  transition: var(--transition-timing);
+}
+
+.btn-back:hover {
+  background: var(--secondary-color);
+}
+
+/* Fix for Product Details Page - Remove sidebar layout */
+.product-details-page .container {
+  display: block !important;
+  /* Override flex layout */
+}
+
+.product-details-page .product-container {
+  display: block;
+}
+
+/* Make product-detail-container take full width */
+.product-detail-container {
+  width: 100%;
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+/* Fix for product-detail-main layout */
+.product-detail-main {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .product-detail-main {
+    flex-direction: row;
+  }
+
+  .product-detail-main .product-images {
+    width: 50%;
+  }
+
+  .product-detail-main .product-info {
+    width: 50%;
+    padding-left: 40px;
+  }
+}
+
+/* Ensure no sidebar appears */
+.product-details-page .sidebar {
+  display: none !important;
+}
+
+.product-details-page .product-box {
+  width: 100% !important;
+  min-width: 100% !important;
+}
+
+
+
+/* Fix the main container - remove sidebar layout */
+.product-details-page .container,
+.product-detail-container .container {
+  display: block !important;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Fix product detail main layout */
+.product-detail-main {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  width: 100%;
+  margin-top: 20px;
+}
+
+/* Fix product images section */
+.product-images {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+}
+
+.main-image {
+  background: var(--white);
+  border: 1px solid var(--cultured);
+  border-radius: var(--border-radius-md);
+  padding: 30px;
+  text-align: center;
+  min-height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.main-image img {
+  max-width: 100%;
+  max-height: 400px;
+  object-fit: contain;
+}
+
+.image-thumbnails {
+  display: flex;
+  gap: 10px;
+  overflow-x: auto;
+  padding: 10px 0;
+}
+
+.image-thumbnails .thumbnail {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  border: 2px solid transparent;
+  border-radius: var(--border-radius-sm);
+  cursor: pointer;
+  padding: 5px;
+  background: var(--white);
+  flex-shrink: 0;
+}
+
+.image-thumbnails .thumbnail.active {
+  border-color: var(--primary-color);
+}
+
+/* Fix product info section */
+.product-info {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+}
+
+/* Fix spacing between sections */
+.product-specs,
+.product-colors,
+.product-storage {
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid var(--cultured);
+}
+
+/* Fix color options */
+.color-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 10px;
+}
+
+.color-option {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 2px solid transparent;
+  cursor: pointer;
+  position: relative;
+  transition: transform 0.2s ease;
+}
+
+.color-option:hover {
+  transform: scale(1.1);
+  border-color: var(--primary-color);
+}
+
+.color-option.active {
+  border-color: var(--primary-color);
+  transform: scale(1.1);
+}
+
+.color-tooltip {
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--eerie-black);
+  color: white;
+  padding: 4px 8px;
+  border-radius: var(--border-radius-sm);
+  font-size: var(--fs-10);
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  transition: var(--transition-timing);
+  margin-bottom: 5px;
+}
+
+.color-option:hover .color-tooltip {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Fix storage options */
+.storage-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.storage-option {
+  padding: 10px 20px;
+  border: 1px solid var(--cultured);
+  border-radius: var(--border-radius-sm);
+  background: white;
+  color: var(--sonic-silver);
+  cursor: pointer;
+  transition: var(--transition-timing);
+  font-size: var(--fs-7);
+}
+
+.storage-option.active,
+.storage-option:hover {
+  border-color: var(--primary-color);
+  color: var(--primary-color);
+  background: rgba(95, 168, 86, 0.1);
+}
+
+/* Fix product actions */
+.product-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-top: 30px;
+  align-items: center;
+}
+
+.quantity-selector {
+  display: flex;
+  align-items: center;
+  border: 1px solid var(--cultured);
+  border-radius: var(--border-radius-sm);
+  overflow: hidden;
+}
+
+.quantity-selector button {
+  width: 40px;
+  height: 45px;
+  background: var(--cultured);
+  color: var(--sonic-silver);
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition-timing);
+}
+
+.quantity-selector button:hover {
+  background: var(--primary-color);
+  color: white;
+}
+
+.quantity-selector input {
+  width: 60px;
+  height: 45px;
+  text-align: center;
+  border: none;
+  border-left: 1px solid var(--cultured);
+  border-right: 1px solid var(--cultured);
+  font-size: var(--fs-6);
+  font-weight: var(--weight-600);
+}
+
+.add-to-cart-btn {
+  background: var(--primary-color);
+  color: white;
+  border: 1px solid var(--primary-color);
+  padding: 12px 24px;
+  border-radius: var(--border-radius-sm);
+  font-weight: var(--weight-600);
+  font-size: var(--fs-7);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: var(--transition-timing);
+  min-width: 200px;
+}
+
+.add-to-cart-btn:hover {
+  background: var(--secondary-color);
+  border-color: var(--secondary-color);
+}
+
+/* Fix related products */
+.related-products {
+  margin-top: 60px;
+  padding-top: 40px;
+  border-top: 1px solid var(--cultured);
+}
+
+.related-products .product-grid {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+/* Responsive fixes */
+@media (min-width: 768px) {
+  .product-detail-main {
+    flex-direction: row;
+  }
+
+  .product-images {
+    width: 50%;
+  }
+
+  .product-info {
+    width: 50%;
+    padding-left: 40px;
+  }
+
+  .related-products .product-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .product-detail-main {
+    gap: 60px;
+  }
+
+  .product-images {
+    width: 45%;
+  }
+
+  .product-info {
+    width: 55%;
+  }
+
+  .main-image {
+    min-height: 500px;
+  }
+
+  .main-image img {
+    max-height: 500px;
+  }
+
+  .related-products .product-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+
+
+/* Add this to override for stars */
+.product-rating .stars ion-icon,
+.showcase-rating ion-icon {
+  display: inline !important;
+}
+
+/* Make sure stars container uses row direction */
+.product-rating .stars,
+.showcase-rating {
+  display: flex;
+  flex-direction: row;
+  /* This is default but ensure it */
+  align-items: center;
+}
+
+
+/* ========== STAR RATING FIXES ========== */
+
+/* Fix all star ratings to be horizontal */
+.product-rating .stars,
+.showcase-rating,
+.sidebar .showcase-rating {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center;
+  gap: 2px;
+}
+
+/* Override the display:block for star icons only */
+.product-rating .stars ion-icon,
+.showcase-rating ion-icon,
+.sidebar .showcase-rating ion-icon {
+  display: inline-block !important;
+  width: auto;
+  height: auto;
+}
+
+/* Specific fixes for product details page */
+.product-info .product-rating {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.product-info .product-rating .stars {
+  display: flex;
+  gap: 3px;
+  font-size: 18px;
+  color: var(--sandy-brown);
+}
+
+/* Ensure proper spacing */
+.rating-text {
+  font-size: var(--fs-7);
+  color: var(--sonic-silver);
+  margin-left: 5px;
+}
